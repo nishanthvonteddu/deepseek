@@ -5,7 +5,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-from .rope import precompute_rope_freqs, apply_rope
+from rope import precompute_rope_freqs, apply_rope
 
 
 class DeepSeekMLHAAttention(nn.Module):

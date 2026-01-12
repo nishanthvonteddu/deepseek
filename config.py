@@ -1,36 +1,35 @@
-# deepseek/config.py
+# config.py
 
-from config import SmolLM2Config
+from dataclasses import dataclass
 
 
-class DeepSeekConfig(SmolLM2Config):
-    """
-    Configuration for DeepSeek-style SmolLM2 variant.
+@dataclass
+class DeepSeekConfig:
+    # --- tokenizer / vocab ---
+    vocab_size: int = 49152
 
-    Inherits all base SmolLM2 parameters and adds:
-    - MLHA (Multi-Latent Head Attention)
-    - MoE (Mixture of Experts)
-    """
+    # --- model size ---
+    hidden_size: int = 576
+    num_hidden_layers: int = 30
+    num_attention_heads: int = 8
+    num_key_value_heads: int = 1
+    intermediate_size: int = 1536
 
-    # -------------------------
-    # MLHA (Attention)
-    # -------------------------
+    # --- sequence / RoPE ---
+    max_position_embeddings: int = 2048
+    rope_theta: float = 10000.0
+
+    # --- normalization ---
+    rms_norm_eps: float = 1e-5
+
+    # --- MLHA ---
     mlha_compression_ratio: int = 8
 
-    # -------------------------
-    # MoE (Feed-Forward)
-    # -------------------------
+    # --- MoE ---
     num_experts: int = 8
     num_shared_experts: int = 1
     top_k_experts: int = 2
-
-    # -------------------------
-    # MoE Loss coefficients
-    # -------------------------
     moe_aux_loss_coef: float = 0.01
-    router_z_loss_coef: float = 0.001
 
-    # -------------------------
-    # Identification (useful for export)
-    # -------------------------
-    model_type: str = "deepseek-smollm2"
+    # --- misc ---
+    tie_word_embeddings: bool = True

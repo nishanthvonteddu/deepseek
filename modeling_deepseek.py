@@ -3,10 +3,10 @@
 import torch
 import torch.nn as nn
 
-from .config import DeepSeekConfig
-from .rmsnorm import RMSNorm
-from .mlha import DeepSeekMLHAAttention
-from .moe import MoEFeedForward
+from config import DeepSeekConfig
+from rmsnorm import RMSNorm
+from mlha import DeepSeekMLHAAttention
+from moe import MoEFeedForward
 
 
 # -------------------------------------------------

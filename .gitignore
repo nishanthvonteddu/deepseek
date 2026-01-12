@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Logs
+logs/
+deepseek_logs/
+*.log
+
+# Checkpoints
+checkpoints/
+deepseek_checkpoints/
+*.pt
+*.safetensors
+
+# Env
+.env
+venv/
+.env/
+
+# OS
+.DS_Store
