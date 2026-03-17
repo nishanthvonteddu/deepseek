@@ -266,14 +266,14 @@ python generate.py --checkpoint checkpoints/best.pt
 
 
 
-## 📊 Training Log Analysis (Steps 4390–4790)
+##  Training Log Analysis (Steps 4390–4790)
 
 This section summarizes training behavior during mid-to-late training, focusing on
 loss stability, learning rate behavior, and generation quality.
 
 ---
 
-### 🔢 Training Metrics
+###  Training Metrics
 
 | Step | Total Loss | CE Loss | Aux Loss | LR | Time (s) |
 |-----:|-----------:|--------:|---------:|----:|---------:|
@@ -291,7 +291,7 @@ loss stability, learning rate behavior, and generation quality.
 
 ---
 
-### 📉 Loss Behavior
+### Loss Behavior
 
 - **Cross-entropy loss** steadily decreases overall, with expected batch-level noise
 - **Auxiliary MoE loss** remains highly stable (~0.30), indicating healthy expert routing
@@ -311,5 +311,4 @@ This indicates:
 - No sudden drops or plateaus
 - Scheduler is functioning as expected
 
----
 
