@@ -313,4 +313,3 @@ This indicates:
 
 ---
 
-### ✍️ Generation Sample (Qualitative Check)
