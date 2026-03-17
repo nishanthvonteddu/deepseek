@@ -88,7 +88,7 @@ Input → Q Projection
 - Faster attention
 - Keeps expressiveness close to full attention
 
-## 📏 RMSNorm (Normalization)
+##  RMSNorm (Normalization)
 
 Instead of LayerNorm, the model uses RMSNorm:
 - Normalizes only by root-mean-square
@@ -100,7 +100,7 @@ Instead of LayerNorm, the model uses RMSNorm:
 - Before MoE feedforward
 - At final output
 
-## 🧠 MoE – Mixture of Experts Feedforward
+##  MoE – Mixture of Experts Feedforward
 
 Each transformer layer uses an MoE block instead of a single FFN.
 
@@ -129,7 +129,7 @@ Experts process token
 Weighted sum of expert outputs
 ```
 
-## 📊 MoE Auxiliary Losses
+##  MoE Auxiliary Losses
 
 Two auxiliary losses are added to training:
 
@@ -146,7 +146,7 @@ Two auxiliary losses are added to training:
 Total Loss = CrossEntropy + Aux Loss
 ```
 
-## 🔗 Residual Connections
+##  Residual Connections
 
 Every major block uses residual connections:
 - Attention output added back to input
@@ -156,14 +156,14 @@ Every major block uses residual connections:
 - Stable gradient flow
 - Deep training (30 layers) without collapse
 
-## 🎯 Output Head (LM Head)
+##  Output Head (LM Head)
 
 - Final hidden states → linear projection
 - Shape: `[hidden_size → vocab_size]`
 - Produces logits for next-token prediction
 - Weight tying can be enabled if desired
 
-## 🚀 Training Details
+##  Training Details
 
 ### Optimizer
 - AdamW
@@ -183,14 +183,14 @@ Every major block uses residual connections:
 - 8 (effective)
 - Fits within A10G 24GB VRAM
 
-## 💾 Checkpointing Strategy
+##  Checkpointing Strategy
 
 - `latest.pt` → always overwritten
 - `best.pt` → lowest loss seen
 - Prevents disk explosion
 - Safe resume supported
 
-## 🤔 Why This Architecture?
+##  Why This Architecture?
 
 This design balances:
 - **Speed** (MLHA, TF32, mixed precision)
@@ -200,7 +200,7 @@ This design balances:
 
 It is intentionally smaller and faster than full DeepSeek models, while keeping the same core ideas.
 
-## 📈 Expected Behavior
+##  Expected Behavior
 
 - Loss decreases fast initially
 - Slower convergence after ~5k steps
