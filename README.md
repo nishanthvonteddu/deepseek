@@ -28,7 +28,7 @@ LM Head (Vocabulary Projection)
 Next-token Logits
 ```
 
-## ⚙️ Model Configuration
+##  Model Configuration
 
 | Parameter | Value |
 |-----------|-------|
@@ -49,7 +49,7 @@ Next-token Logits
 - Tokenizer comes from SmolLM2 Instruct
 - Embedding matrix shape: `[vocab_size, hidden_size]`
 
-## 🌀 Positional Encoding (RoPE)
+##  Positional Encoding (RoPE)
 
 This model uses Rotary Positional Embeddings (RoPE):
 - Positions are encoded by rotating query and key vectors
@@ -60,7 +60,7 @@ This model uses Rotary Positional Embeddings (RoPE):
 - Stable long-context behavior
 - Better relative position modeling
 
-## 🎯 MLHA – Multi-Latent Head Attention
+##  MLHA – Multi-Latent Head Attention
 
 ### What MLHA Does
 
