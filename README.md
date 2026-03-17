@@ -208,7 +208,7 @@ It is intentionally smaller and faster than full DeepSeek models, while keeping 
 - Final loss (TinyStories): ~2.3–2.6
 - This is normal and healthy
 
-## 🛠️ Technical Implementation
+##  Technical Implementation
 
 - Built with PyTorch
 - Warm-started from SmolLM2
@@ -216,7 +216,7 @@ It is intentionally smaller and faster than full DeepSeek models, while keeping 
 - Custom transformer implementation
 - Efficient MoE routing
 
-## 📁 Repository Structure
+##  Repository Structure
 
 ```
 ├── model.py              # Core model implementation
@@ -228,7 +228,7 @@ It is intentionally smaller and faster than full DeepSeek models, while keeping 
 └── utils/               # Utility functions
 ```
 
-## 🚦 Quick Start
+##  Quick Start
 
 ```bash
 # Install dependencies
@@ -241,18 +241,14 @@ python train.py --config configs/base.yaml
 python generate.py --checkpoint checkpoints/best.pt
 ```
 
-## 📄 License
-
-[Your License Here]
-
-## 🙏 Acknowledgments
+##  Acknowledgments
 
 - DeepSeek AI for the architecture inspiration
 - SmolLM2 for tokenizer and warm-start
 - TinyStories dataset for training
 - PyTorch team for the framework
 
-## 📚 References
+##  References
 
 1. DeepSeek Models
 2. Mixture of Experts (MoE) literature
